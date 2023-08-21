@@ -44,8 +44,12 @@ void insterAtAnyPos(Node* &head, int pos, int value) {
         return;
     }
     Node *temp = head;
-    for(int i = 1; i < pos-1; i++) {
+    for(int i = 1; temp != NULL && i < pos - 1; i++) {
         temp = temp->next;
+    }
+    if (temp == NULL) {
+        delete newNode;
+        return;
     }
     newNode->next = temp->next;
     temp->next = newNode;
@@ -110,7 +114,7 @@ int main() {
     cout << search(head, 3) << endl;
     insterAtAnyPos(head, 2, 5);
     insterAtAnyPos(head, 3, 6);
-    insterAtAnyPos(head, 1, 10);
+    insterAtAnyPos(head, 7, 10);
     display(head);
     deleteFromHead(head);
     display(head);
