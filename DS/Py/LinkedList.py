@@ -60,7 +60,17 @@ class LinkedList:
             current = current.next
         current.next = current.next.next
 
-    
+    def search(self, key):
+        pos = 1
+        current = self.head
+        while current.next:
+            if current.data == key:
+                print("Founded, position No: ", pos)
+                return
+            current = current.next
+            pos += 1
+        print("Not found")
+
     def display(self):
         current = self.head
         while current:
@@ -87,5 +97,6 @@ list.deleteFromTail()
 list.display()
 list.deleteFromAnyPos(3)
 list.display()
+list.search(3)
 
 
