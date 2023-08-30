@@ -11,6 +11,9 @@ class LinkedList:
         newNode = Node(value)
         newNode.next = self.head
         self.head = newNode
+
+    def deleteFromHead(self):
+        self.head = self.head.next
     
     def insertAtTail(self, value):
         newNode = Node(value)
@@ -62,7 +65,8 @@ list.display()
 list.insertAtAnyPos(3, 8)
 list.insertAtAnyPos(1, 9)
 list.insertAtAnyPos(7, 4)
-list.insertAtAnyPos(10, 4)
+list.display()
+list.deleteFromHead()
 list.display()
 
 
