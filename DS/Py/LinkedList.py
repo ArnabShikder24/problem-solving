@@ -51,6 +51,14 @@ class LinkedList:
             current = current.next
         newNode.next = current.next
         current.next = newNode
+    
+    def deleteFromAnyPos(self, pos):
+        current = self.head
+        if pos == 1:
+            self.head = self.head.next
+        for i in range(pos - 2):
+            current = current.next
+        current.next = current.next.next
 
     
     def display(self):
@@ -76,6 +84,8 @@ list.display()
 list.deleteFromHead()
 list.display()
 list.deleteFromTail()
+list.display()
+list.deleteFromAnyPos(3)
 list.display()
 
 
