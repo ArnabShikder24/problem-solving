@@ -16,7 +16,6 @@ int main() {
     int segment = 1;
     vector<int> brr;
     if(n==1) {
-        brr.push_back(segment);
         cout << 1;
         return 0;
     }
