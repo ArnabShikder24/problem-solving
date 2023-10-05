@@ -1,0 +1,2 @@
+
+    vector<char> arr(n);
