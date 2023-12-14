@@ -4,11 +4,12 @@ using namespace std;
 
 int main() {
     BOOST;
-    int a, b;
-    cin >> a >> b;
-    if(a>=b)
-        cout << "Yes";
+    string f1, s1, f2, s2;
+    cin >> f1 >> s1 >> f2 >> s2;
+    if(s1 == s2)
+        cout << "ARE Brothers";
     else
-        cout << "No";
+        cout << "NOT";
+
     return 0;
 }

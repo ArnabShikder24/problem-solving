@@ -4,11 +4,12 @@ using namespace std;
 
 int main() {
     BOOST;
-    int a, b;
-    cin >> a >> b;
-    if(a>=b)
-        cout << "Yes";
+    long long n;
+    cin >> n;
+    int x = n / 1000;
+    if (x % 2 == 0)
+        cout << "EVEN";
     else
-        cout << "No";
+        cout << "ODD";
     return 0;
 }

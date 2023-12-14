@@ -4,11 +4,13 @@ using namespace std;
 
 int main() {
     BOOST;
-    int a, b;
-    cin >> a >> b;
-    if(a>=b)
-        cout << "Yes";
-    else
-        cout << "No";
+    long long a, b, c, minV, maxV;
+    cin >> a >> b >> c;
+
+    minV = min({a, b, c});
+    maxV = max({a, b, c});
+
+    cout << minV << " " << maxV;
+
     return 0;
 }

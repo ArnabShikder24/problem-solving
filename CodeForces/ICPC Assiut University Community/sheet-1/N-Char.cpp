@@ -4,11 +4,13 @@ using namespace std;
 
 int main() {
     BOOST;
-    int a, b;
-    cin >> a >> b;
-    if(a>=b)
-        cout << "Yes";
+    char c;
+    cin >> c;
+    if (c >= 'A' && c <= 'Z')
+        c = c + 32;
     else
-        cout << "No";
+        c = c - 32;
+    cout << c;
+
     return 0;
 }
