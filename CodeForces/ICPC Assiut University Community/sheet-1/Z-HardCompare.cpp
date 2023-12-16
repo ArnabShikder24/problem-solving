@@ -7,7 +7,7 @@ int main() {
     long long a, b, c, d;
     cin >> a >> b >> c >> d;
 
-    if(pow(a, b) > pow(c, d))
+    if(b * log(a) > d * log(c))
         cout << "YES";
     else
         cout << "NO";
