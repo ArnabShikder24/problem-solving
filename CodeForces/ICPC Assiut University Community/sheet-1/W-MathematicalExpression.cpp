@@ -4,5 +4,18 @@ using namespace std;
 
 int main() {
     BOOST;
+    long long a, c, e;
+    char b, d;
+    cin >> a >> b >> c >> d >> e;
+    if((a + c == e && b == '+') || (a - c == e && b == '-') || (a * c == e && b == '*'))
+        cout << "Yes";
+    else
+        if(b == '+')
+            cout << a + c;
+        else if(b == '-')
+            cout << a - c;
+        else
+            cout << a * c;
+
     return 0;
 }
