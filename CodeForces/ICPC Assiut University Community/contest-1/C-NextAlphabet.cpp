@@ -4,9 +4,13 @@ using namespace std;
 
 int main() {
     BOOST;
-    long long a, b;
-    cin >> a >> b;
-    double x = ( 1.00 * b / (100 - a)) * 100;
-    cout << fixed << setprecision(2) << x;
+    char c;
+    cin >> c;
+    if(c == 'z')
+        cout << 'a';
+    else {
+        char c1 = c + 1;
+        cout << c1;
+    }
     return 0;
 }
