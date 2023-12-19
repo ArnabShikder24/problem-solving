@@ -13,9 +13,28 @@ using namespace std;
 
 int main() {
     BOOST;
-    LL a, b, x;
-    cin >> a >> b;
-    x = a ^ b;
-    cout << x;
+    LL e, m, b, t = 0;
+    cin >> e >> m >> b;
+    if(e>0 && b>0){
+        if(e>=m && b>=m) {
+            t += m;
+            e -= m;
+            b -= m;
+            m = 0;
+            if(e/2>0 && b>=e/2) {
+                t += e / 2;
+                e -= e / 2;
+                b -= e / 2;
+                cout << t;
+            }
+        }
+        else {
+            LL minV = min(e, b);
+            cout << minV;
+        }
+    }
+    else {
+        cout << 0;
+    }
     return 0;
 }
