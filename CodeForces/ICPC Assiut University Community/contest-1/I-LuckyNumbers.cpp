@@ -13,6 +13,18 @@ using namespace std;
 
 int main() {
     BOOST;
-    PRINT("Hello World");
+    int n;
+    cin >> n;
+    if(n == 10 || n == 20 || n == 30 || n == 40 || n == 50 || n == 60 || n == 70 || n == 80 || n == 90) {
+        YES;
+        return 0;
+    }
+
+    if(((n/10) % (n%10)) == 0 || ((n%10) % (n/10)) == 0) {
+        YES;
+    }
+    else {
+        NO;
+    }
     return 0;
 }
