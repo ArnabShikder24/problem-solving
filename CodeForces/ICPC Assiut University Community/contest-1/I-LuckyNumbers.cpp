@@ -13,16 +13,6 @@ using namespace std;
 
 int main() {
     BOOST;
-    LL e, m, b, minV;
-    cin >> e >> m >> b;
-    minV = min({e, m, b});
-    e = (e - minV) / 2;
-    m -= minV;
-    b -= minV;
-    if(e <= b)
-        cout << e + minV;
-    else
-        cout << b + minV;
-    
+    PRINT("Hello World");
     return 0;
 }

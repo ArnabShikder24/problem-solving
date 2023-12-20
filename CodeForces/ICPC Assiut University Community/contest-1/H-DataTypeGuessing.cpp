@@ -13,16 +13,18 @@ using namespace std;
 
 int main() {
     BOOST;
-    LL e, m, b, minV;
-    cin >> e >> m >> b;
-    minV = min({e, m, b});
-    e = (e - minV) / 2;
-    m -= minV;
-    b -= minV;
-    if(e <= b)
-        cout << e + minV;
-    else
-        cout << b + minV;
-    
+    double a, k, n;
+    cin >> n >> k >> a;
+    LL x = (k * n) / a;
+    double q = (k * n) / a, test = q - x;
+    if(test > 0) {
+        cout << "double" << endl;
+    }
+    else if(q > 2147483647) {
+        cout << "long long" << endl;
+    }
+    else {
+        cout << "int" << endl;
+    }
     return 0;
 }
