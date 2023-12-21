@@ -15,19 +15,8 @@ int main() {
     BOOST;
     int n;
     cin >> n;
-    vector<LL> v(n);
-    FOR(i, 0, n - 1)
-        cin >> v[i];
-
-    LL maxV = v[0];
-
-    FOR(i, 1, n - 1) {
-        if(maxV < v[i]) {
-            maxV = v[i];
-        }
+    FOR(i, 1, 12) {
+        PRINT(n << " * " << i << " = " << n * i);
     }
-
-    PRINT(maxV);
-
     return 0;
-}
+}   
