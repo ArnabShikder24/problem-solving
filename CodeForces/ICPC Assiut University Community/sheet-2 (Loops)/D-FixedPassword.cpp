@@ -13,16 +13,15 @@ using namespace std;
 
 int main() {
     BOOST;
-    int n;
-    cin >> n;
-    if(n < 2) {
-        PRINT(-1);
-        return 0;
-    }
-    FOR(i, 2, n) {
-        if(i % 2 == 0) {
-            PRINT(i);
+    int p;
+    while(1) {
+        cin >> p;
+        if(p == 1999) {
+            PRINT("Correct");
+            break;
         }
+        else
+            PRINT("Wrong");
     }
     return 0;
 }

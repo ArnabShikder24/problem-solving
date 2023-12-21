@@ -13,16 +13,25 @@ using namespace std;
 
 int main() {
     BOOST;
-    int n;
-    cin >> n;
-    if(n < 2) {
-        PRINT(-1);
-        return 0;
+    int x, e = 0, o = 0, p = 0, n = 0;
+    cin >> x;
+    vector<LL> v(x);
+    FOR(i, 0, x - 1) {
+        cin >> v[i];
+        if(v[i] > 0)
+            p++;
+        if(v[i] < 0)
+            n++;
+        if(v[i] % 2 == 0 || v[i] == 0)
+            e++;
+        else
+            o++;
     }
-    FOR(i, 2, n) {
-        if(i % 2 == 0) {
-            PRINT(i);
-        }
-    }
+
+    PRINT("Even: " << e);
+    PRINT("Odd: " << o);
+    PRINT("Positive: " << p);
+    PRINT("Negative: " << n);
+
     return 0;
 }

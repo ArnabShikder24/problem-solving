@@ -13,16 +13,6 @@ using namespace std;
 
 int main() {
     BOOST;
-    int n;
-    cin >> n;
-    if(n < 2) {
-        PRINT(-1);
-        return 0;
-    }
-    FOR(i, 2, n) {
-        if(i % 2 == 0) {
-            PRINT(i);
-        }
-    }
+    PRINT("Hello World");
     return 0;
 }
