@@ -13,7 +13,14 @@ using namespace std;
 
 int main() {
     BOOST;
+    vector<int>v, v1;
     int a, b;
     cin >> a >> b;
+    while(b != 0) {
+        int temp = a % b;
+        a = b;
+        b = temp;
+    }
+    PRINT(a);
     return 0;
 }
