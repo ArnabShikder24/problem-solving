@@ -17,8 +17,14 @@ int main() {
     cin >> n;
     while(n--) {
         int x, y;
+        cin >> x >> y;
         auto [minV, maxV] = minmax(x, y);
-        cout << minV;
+        int sum = 0;
+        FOR(i, minV + 1, maxV - 1) {
+            if(i % 2 == 1)
+                sum += i;
+        }
+        cout << sum << endl;
     }
     return 0;
 }
