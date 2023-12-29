@@ -1,56 +1,35 @@
 #include <bits/stdc++.h>
-using namespace std;
-#define BOOST ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL)
-#define endl '\n'
-#define LL long long
-#define FOR(i, a, b) for(int i = a; i <= b; ++i)
-#define RFOR(i, a, b) for(int i = a; i >= b; --i)
-#define YES cout << "YES" << endl;
-#define NO cout << "NO" << endl;
-#define DEBUG(x) cout << #x << " = " << x << endl;
-#define PRINT(x) cout << x << endl;
-#define FMT(x) fixed << setprecision(x)
 
-bool isVowel(char c) {
-    return (c == 'a' || c == 'e');
+using namespace std;
+
+const int MAX = 200'007;
+const int MOD = 1'000'000'007;
+
+void solve() {
+	int n;
+	cin >> n;
+	string s;
+	cin >> s;
+	string res = "";
+	while (!s.empty()) {
+		int x;
+		if (s.back() == 'a' || s.back() == 'e') {x = 2;}
+		else {x = 3;}
+		
+		while (x--) {
+			res += s.back();
+			s.pop_back();
+		}
+		res += '.';
+	}
+	res.pop_back();
+	reverse(res.begin(), res.end());
+	cout << res << '\n';
 }
 
 int main() {
-    BOOST;
-    int n;
-    cin >> n;
-    while(n--) {
-        int t;
-        cin >> t;
-        char s[t];
-        FOR(i, 0, t - 1)
-            cin >> s[i];
-        
-        FOR(i, 0, t - 1) {
-            if(t % 2 == 0){
-                if (!isVowel(s[i]) && isVowel(s[i+1])) {
-                    cout << s[i] << s[i + 1] << '.';
-                    i++;
-                } else if (!isVowel(s[i]) && isVowel(s[i+1]) && !isVowel(s[i+2])) {
-                    cout << s[i] << s[i + 1] << s[i + 2] << '.';
-                    i += 2;
-                } else {
-                    cout << s[i];
-                }
-            }
-            else {
-                if (!isVowel(s[i]) && isVowel(s[i+1]) && !isVowel(s[i+2])) {
-                    cout << s[i] << s[i + 1] << s[i + 2] << '.';
-                    i += 2;
-                } else if (!isVowel(s[i]) && isVowel(s[i+1])) {
-                    cout << s[i] << s[i + 1] << '.';
-                    i++;
-                } else {
-                    cout << s[i];
-                }
-            }
-            
-        }
-    }
-    return 0;
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	int tt; cin >> tt; for (int i = 1; i <= tt; i++) {solve();}
+	// solve();
 }
