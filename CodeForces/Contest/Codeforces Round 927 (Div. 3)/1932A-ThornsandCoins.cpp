@@ -11,24 +11,32 @@ using namespace std;
 #define PRINT(x) cout << x << endl;
 #define FMT(x) fixed << setprecision(x)
 
-int main() {
-    BOOST;
-    int n, first = 0, second = 1;
-    cin >> n;
-    if(n == 1) {
-        cout << first << endl;
-    }
-    else if(n == 2) {
-        cout << first << " " << second << endl;
-    }
-    else {
-        cout << first << " " << second << " ";
-        for (int i = 2; i < n; i++) {
-            int res = first + second;
-            cout << res << " ";
-            first = second;
-            second = res;
+int maxCoins(int n, const string& path) {
+    vector<int> dp(n + 1, 0);
+    dp[1] = (path[1] == '@') ? 1 : 0;
+
+    for (int i = 2; i <= n; ++i) {
+        if (path[i] == '@') {
+            dp[i] = max(dp[i - 1], dp[i - 2]) + 1;
+        } else {
+            dp[i] = max(dp[i - 1], dp[i - 2]);
         }
     }
+    return dp[n];
+}
+
+int main() {
+    BOOST;
+    int t;
+    cin >> t;
+
+    while (t--) {
+        int n;
+        cin >> n;
+        string path;
+        cin >> path;
+        cout << maxCoins(n, path) << endl;
+    }
+    
     return 0;
 }
