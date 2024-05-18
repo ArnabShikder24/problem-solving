@@ -13,19 +13,16 @@ using namespace std;
 
 int main() {
   BOOST;
-  int n;
+  LL n;
   cin >> n;
-  while (n--)
-  {
-    LL n1, n2, mx, mi, r1, r2;
-    cin >> n1 >> n2;
-    mx = max(n1, n2);
-    mi = min(n1, n2);
-    mi--;
-    r1 = mi * (mi + 1) / 2;
-    r2 = mx * (mx + 1) / 2;
-    cout << r2 - r1 << endl;
+  LL row = n / 4;
+  LL l = 4 * row;
+  LL h = l + 3;
+  if(row % 2 == 1) {
+    cout << row << " " << ((h == n) ? 0 : ((h - 1 == n) ? 1 : ((h - 2 == n) ? 2 : 3)));
   }
-  
+  else {
+    cout << row << " " << ((h == n) ? 3 : ((h - 1 == n) ? 2: ((h - 2 == n) ? 1 : 0)));
+  }
   return 0;
 }
